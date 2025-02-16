@@ -3,13 +3,15 @@ import React, { useState } from "react";
 // Define the props interface
 interface SearchbarProps {
   theme: "light" | "dark"; // Explicitly define the type for `theme`
+  onSearch: (term: string) => void; // Add onSearch prop
 }
 
-const Searchbar: React.FC<SearchbarProps> = ({ theme }) => {
+const Searchbar: React.FC<SearchbarProps> = ({ theme, onSearch }) => {
   const [flightNumber, setFlightNumber] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFlightNumber(e.target.value);
+    onSearch(e.target.value); // Call onSearch with the input value
   };
 
   const handleSearch = () => {

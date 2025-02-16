@@ -1,28 +1,37 @@
+import React, { useState } from 'react';
 import Searchbar from './components/SeachBar'
 import F_Card from './components/F_Card'
 import './App.css'
 import MenuBar from './components/Menu';
+import flightsData from './data/flightsData'; // Import the dummy data
 
 function App() {
-  const theme = 'light'; // Define the theme variable
+  const [searchTerm, setSearchTerm] = useState('');
+  const theme = 'teal'; // Define the theme variable
+
+  // Filter flights based on the search term
+  const filteredFlights = flightsData.filter(flight =>
+    flight.flightNumber.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <>
-      <Searchbar theme={theme} />
+      <Searchbar theme={theme} onSearch={setSearchTerm} />
+      {filteredFlights.map((flight, index) => (
+        <F_Card 
+          key={index} // Use index as key (or a unique identifier if available)
+          flightNumber={flight.flightNumber}
+          origin={flight.origin}
+          destination={flight.destination}
+          departureTime={flight.departureTime}
+          arrivalTime={flight.arrivalTime}
+          gate={flight.gate}
+          belt={flight.belt}
+          timeLeft={flight.timeLeft}
+          status={flight.status}
+        />
+      ))}
       <div style={{ marginBottom: '90px' }}></div>
-
-      <F_Card 
-        flightNumber="FL123"
-        origin="LAX"
-        destination="JFK"
-        departureTime="10:00"
-        arrivalTime="13:00"
-        gate="A1"
-        belt="B2"
-        timeLeft="2h 30m"
-        status="On Time"
-      />
-      <div style={{ marginBottom: '30px' }}></div>
       
       <MenuBar />
     </>
