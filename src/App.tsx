@@ -1,33 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Searchbar from './components/SeachBar'
+import F_Card from './components/F_Card'
 import './App.css'
+import MenuBar from './components/Menu';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const theme = 'light'; // Define the theme variable
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Searchbar theme={theme} />
+      <div style={{ marginBottom: '90px' }}></div>
+
+      <F_Card 
+        flightNumber="FL123"
+        origin="LAX"
+        destination="JFK"
+        departureTime="10:00"
+        arrivalTime="13:00"
+        gate="A1"
+        belt="B2"
+        timeLeft="2h 30m"
+        status="On Time"
+      />
+      <div style={{ marginBottom: '30px' }}></div>
+      
+      <MenuBar />
     </>
   )
 }

@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,3 +42,183 @@
 .read-the-docs {
   color: #888;
 }
+/* Beach Travel Theme Colors */
+:root {
+  /* Light theme variables */
+  --sand-light: #f5e6d3;
+  --sand-dark: #dbc1a4;
+  --ocean-light: #87ceeb;
+  --ocean-medium: #2596be;
+  --ocean-dark: #1a4b77;
+  --coral-light: #ffa07a;
+  --coral-dark: #ff7f50;
+  --palm-light: #8fbc8f;
+  --palm-dark: #2f4f4f;
+  --sunset-light: #ffb6b6;
+  --sunset-dark: #ff6b6b;
+  --text-light: #2c3e50;
+  --bg-light: #ffffff;
+}
+
+[data-theme='dark'] {
+  /* Dark theme variables */
+  
+  --sand-light: #3d3731;
+  --sand-dark: #2a2520;
+  --ocean-light: #1c5d96;
+  --ocean-medium: #153a5c;
+  --ocean-dark: #0a3647;
+  --coral-light: #b35838;
+  --coral-dark: #8c4429;
+  --palm-light: #2f4f4f;
+  --palm-dark: #1c2f2f;
+  --sunset-light: #b34d4d;
+  --sunset-dark: #8c3d3d;
+  --text-light: #e0e0e0;
+  --bg-light: #1a1a1a;
+}
+
+/* Base Theme Classes */
+.beach-theme {
+  @apply transition-colors duration-200;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+/* Card Variants */
+.beach-card {
+  @apply rounded-xl p-6 w-full max-w-md transition-all duration-300;
+}
+
+.beach-card-primary {
+  background: linear-gradient(145deg, var(--palm-dark), var(--ocean-dark));
+  color: var(--sand-light);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.beach-card-secondary {
+  background: linear-gradient(145deg, var(--sand-light), var(--sand-dark));
+  color: var(--ocean-dark);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Flight Status Elements */
+.flight-status {
+  @apply rounded-lg px-4 py-2 text-sm font-medium;
+}
+
+.status-ontime {
+  background-color: var(--palm-light);
+  color: var(--text-light);
+}
+
+.status-delayed {
+  background-color: var(--sunset-dark);
+  color: var(--sand-light);
+}
+
+/* Progress Bars */
+.progress-container {
+  @apply w-full h-2 rounded-full;
+  background-color: var(--sand-dark);
+}
+
+.progress-bar {
+  @apply h-full rounded-full transition-all duration-300;
+  background-color: var(--coral-light);
+}
+
+/* Custom Borders */
+.border-themed {
+  border-color: var(--ocean-medium);
+}
+
+.border-themed-light {
+  border-color: var(--sand-light);
+}
+
+/* Text Styles */
+.text-primary {
+  color: var(--ocean-medium);
+}
+
+.text-secondary {
+  color: var(--coral-light);
+}
+
+.text-accent {
+  color: var(--sunset-light);
+}
+/* Airplane Icon */
+.airplane-icon {
+  @apply text-xl;
+  color: var(--coral-light);
+  animation: fly 2s ease-in-out infinite;
+}
+
+@keyframes fly {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(5deg);
+  }
+}
+
+/* Interactive Elements */
+.btn-primary {
+  @apply px-4 py-2 rounded-lg transition-all duration-200;
+  background-color: var(--ocean-medium);
+  color: var(--sand-light);
+}
+
+.btn-primary:hover {
+  background-color: var(--ocean-dark);
+  transform: translateY(-2px);
+}
+
+/* Hover Effects */
+.hover-effect {
+  @apply transition-all duration-200;
+}
+
+.hover-effect:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/* Flight Route Line */
+.route-line {
+  @apply w-24 h-0.5 relative;
+  background-color: var(--sand-dark);
+}
+
+.route-line-icon {
+  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  color: var(--coral-light);
+}
+
+/* Responsive Design Helpers */
+@media (max-width: 640px) {
+  .beach-card {
+    @apply p-4;
+  }
+}
+
+/* Animation Classes */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-wave {
+  animation: wave 2s infinite ease-in-out;
+}
+
+
+
+
