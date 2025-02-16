@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Searchbar from './components/SeachBar'
 import F_Card from './components/F_Card'
 import './App.css'
@@ -7,7 +7,7 @@ import flightsData from './data/flightsData'; // Import the dummy data
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
-  const theme = 'teal'; // Define the theme variable
+  const theme: "light" | "dark" = "light"; // Change to "light" or "dark"
 
   // Filter flights based on the search term
   const filteredFlights = flightsData.filter(flight =>
@@ -17,7 +17,9 @@ function App() {
   return (
     <>
       <Searchbar theme={theme} onSearch={setSearchTerm} />
+      <div style={{ marginBottom: '90px' }}></div>
       {filteredFlights.map((flight, index) => (
+        
         <F_Card 
           key={index} // Use index as key (or a unique identifier if available)
           flightNumber={flight.flightNumber}

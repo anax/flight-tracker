@@ -26,7 +26,7 @@ const F_Card: React.FC<FlightCardProps> = ({
   isDark = false
 }) => {
   return (
-    <div className={`rounded-xl p-6 w-full max-w-md ${isDark ? 'bg-gray-800' : 'bg-teal-500'} text-white`}>
+    <div className={`rounded-xl p-6 w-full max-w-md ${isDark ? 'bg-gray-800' : 'bg-teal-900'} text-white`}>
       <div className="flex justify-between items-center mb-4">
         <div className="text-lg font-bold">{flightNumber}</div>
         <img src="/src/assets/maldivian.svg" alt="Maldivian Airlines" className="h-6" />
