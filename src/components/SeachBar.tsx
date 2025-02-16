@@ -20,7 +20,7 @@ const Searchbar: React.FC<SearchbarProps> = ({ theme, onSearch }) => {
 
   return (
     <div
-      className="p-4 rounded-lg bg-teal-900"
+      className="p-4 rounded-lg container-no-padding"
     >
       <div className="flex items-center space-x-4">
         <input
@@ -31,12 +31,12 @@ const Searchbar: React.FC<SearchbarProps> = ({ theme, onSearch }) => {
           className={`flex-1 p-2 rounded-lg border ${
             theme === "dark"
               ? "bg-grey-400 border-gray-600 text-white placeholder-teal-300"
-              : "bg-teal-800 border-teal-800 text-teal-300 placeholder-gray-400"
-          } focus:outline-none focus:ring-2 focus:ring-teal-700`}
+              : "container-no-padding border-teal-800 text-teal-300 placeholder-gray-400"
+          } focus:outline-none focus:ring-2 focus:container-no-padding`}
         />
         <button
           onClick={handleSearch}
-          className="rounded-lg px-4 py-2 transition-colors duration-200 progress-bar text-teal-800"
+          className="px-2 py-2 rounded-lg transition-colors duration-200 progress-bar text-teal-800"
         >
           Search
         </button>

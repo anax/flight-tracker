@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  font-family: 'Roboto', sans-serif; /* Set Roboto as the default font */
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -154,6 +158,16 @@
   @apply text-xl;
   color: var(--coral-light);
   animation: fly 2s ease-in-out infinite;
+}
+
+.container {
+  background: linear-gradient(135deg, #067f8f, #014449);
+  padding: 2rem;
+  border-radius: 8px; /* Optional: Add some rounding */
+}
+.container-no-padding {
+  background: linear-gradient(135deg, #067f8f, #014449);
+  border-radius: 8px; /* Optional: Add some rounding */
 }
 
 @keyframes fly {
