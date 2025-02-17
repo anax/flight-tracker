@@ -4,7 +4,6 @@ import F_Card from './components/F_Card'
 import './App.css'
 
 import flightsData from './data/flightsData'; // Import the dummy data
-import MenuBar from './components/Menu';
 import SheetPane from './components/Sheet';
 
 function App() {
@@ -41,7 +40,6 @@ function App() {
           />
         ))}
       </div>
-      <MenuBar />
       <SheetPane />
     </div>
   )
