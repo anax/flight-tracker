@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from './components/Header'; // Import the Header
 import F_Card from './components/F_Card'
 import './App.css'

@@ -1,8 +1,8 @@
-import React from 'react';
+import { FC } from 'react';
 import Searchbar from './SeachBar';
 import ToggleSwitch from './ThemeToggle';
 
-const Header: React.FC<{ theme: string; onSearch: (term: string) => void; onToggle: (isDark: boolean) => void }> = ({ theme, onSearch, onToggle }) => {
+const Header: FC<{ theme: string; onSearch: (term: string) => void; onToggle: (isDark: boolean) => void }> = ({ theme, onSearch, onToggle }) => {
   return (
     <header className="bg-gradient-to-r from-blue-600 to-teal-500 p-4 rounded-b-lg shadow-lg w-full fixed top-0 left-0 z-10">
       <div className="flex items-center justify-between p-8">
