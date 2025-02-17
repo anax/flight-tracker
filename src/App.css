@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Roboto', sans-serif; /* Set Roboto as the default font */
+  @apply bg-gradient-to-br from-blue-900 to-teal-800; /* Tailwind CSS gradient */
 }
 
 #root {
@@ -69,7 +70,7 @@ body {
   
   --sand-light: #3d3731;
   --sand-dark: #2a2520;
-  --ocean-light: #1c5d96;
+  --ocean-light: #09bcc9;
   --ocean-medium: #153a5c;
   --ocean-dark: #0a3647;
   --coral-light: #b35838;
@@ -161,13 +162,28 @@ body {
 }
 
 .container {
-  background: linear-gradient(135deg, #067f8f, #014449);
+  background: linear-gradient(135deg, #06a7b3, #003fc7);
   padding: 2rem;
   border-radius: 8px; /* Optional: Add some rounding */
 }
 .container-no-padding {
-  background: linear-gradient(135deg, #067f8f, #014449);
+  background: linear-gradient(135deg, #06a7b3, #003fc7);
   border-radius: 8px; /* Optional: Add some rounding */
+}
+
+.toggle-btn {
+  background-color: #09bcc9;
+  border: 1px solid;
+  border-radius: p99px;
+  width: 50px;
+  height: 28px;
+  transition: background-color 0.1s ease, border-color 0.2s ease;
+  cursor: pointer;
+  box-shadow: 1;
+
+}
+.toggle-bg {
+  color: var(--coral-light);
 }
 
 @keyframes fly {

@@ -25,6 +25,18 @@ const F_Card: React.FC<FlightCardProps> = ({
   status,
   isDark = false
 }) => {
+ // Determine the status tag style based on the flight status
+ let statusStyle = '';
+ if (status === "On Time") {
+   statusStyle = "bg-green-500"; // Green for On Time
+ } else if (status === "Delayed") {
+   statusStyle = "bg-gray-500"; // Gray for Delayed
+ } else if (status === "Cancelled") {
+   statusStyle = "bg-red-500"; // Red for Cancelled
+ }
+
+
+
   return (
     <div className={`rounded-xl p-6 w-full max-w-md ${isDark ? 'bg-gray-800' : 'container'} text-white`}>
       <div className="flex justify-between items-center mb-4">
@@ -38,7 +50,10 @@ const F_Card: React.FC<FlightCardProps> = ({
           <div className="text-sm opacity-70">SRILANKA</div>
           <div className="mt-1">
             <div className="text-xl">{departureTime}</div>
-            <div className="text-sm opacity-70">{status}</div>
+            {/* Status Tag */}
+             <div className={`${statusStyle} text-white text-sm rounded-full px-3 py-1 inline-block mb-4`}>
+              {status}
+            </div>
             <div className="text-sm">Gate {gate}</div>
           </div>
         </div>
@@ -56,7 +71,10 @@ const F_Card: React.FC<FlightCardProps> = ({
           <div className="text-sm opacity-70">MALDIVES</div>
           <div className="mt-1">
             <div className="text-xl">{arrivalTime}</div>
-            <div className="text-sm opacity-70">{status}</div>
+            {/* Status Tag */}
+            <div className={`${statusStyle} text-white text-sm rounded-full px-3 py-1 inline-block mb-4`}>
+              {status}
+            </div>
             <div className="text-sm">Gate {gate}</div>
           </div>
         </div>
