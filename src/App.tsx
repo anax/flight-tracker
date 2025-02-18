@@ -3,8 +3,8 @@ import Header from './components/Header'; // Import the Header
 import F_Card from './components/F_Card'
 import './App.css'
 import SheetPane from './components/Sheet';
+import flightsData from './data/flightsData';
 
-import flightsData from './data/flightsData'; // Import the dummy data
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -24,6 +24,22 @@ function App() {
       document.body.classList.remove('bg-gray-800', 'text-white'); // Remove dark classes
     }
   }, [isDark]);
+
+  const handleIconClick = (icon: string) => {
+    switch (icon) {
+      case 'settings':
+        console.log('Settings icon clicked');
+        break;
+      case 'home':
+        console.log('Home icon clicked');
+        break;
+      case 'notification':
+        console.log('Notification icon clicked');
+        break;
+      default:
+        break;
+    }
+  };
 
   // Filter flights based on the search term
   const filteredFlights = flightsData.filter(flight =>
@@ -52,7 +68,7 @@ function App() {
           />
         ))}
       </div>
-      <SheetPane theme={isDark ? 'dark' : 'light'} />
+      <SheetPane theme={isDark ? 'dark' : 'light'} onIconClick={handleIconClick}/>
     </div>
   )
 }
