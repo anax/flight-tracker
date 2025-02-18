@@ -1,4 +1,5 @@
 import React from 'react';
+import Flogo from '../assets/maldivian.svg';
 
 interface FlightCardProps {
   flightNumber: string;
@@ -41,7 +42,7 @@ const F_Card: React.FC<FlightCardProps> = ({
     <div className={`rounded-xl p-6 w-full max-w-md ${isDark ? 'bg-gray-800' : 'container'} text-white`}>
       <div className="flex justify-between items-center mb-4">
         <div className="text-lg font-bold">{flightNumber}</div>
-        <img src="/src/assets/maldivian.svg" alt="Maldivian Airlines" className="h-6" />
+        <img src={Flogo} alt="Maldivian Airlines" className="h-6" />
       </div>
 
       <div className="flex justify-between items-center mb-6">

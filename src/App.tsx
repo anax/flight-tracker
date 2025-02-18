@@ -9,6 +9,7 @@ import flightsData from './data/flightsData';
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isDark, setIsDark] = useState(false);
+  
 
   const toggleTheme = (isDark: boolean) => {
     setIsDark(isDark);
