@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Searchbar from './SeachBar';
 import ToggleSwitch from './ThemeToggle';
+import logo from '../assets/logo_white.svg';
 
 const Header: FC<{ theme: string; onSearch: (term: string) => void; onToggle: (isDark: boolean) => void }> = ({ theme, onSearch, onToggle }) => {
   return (
@@ -8,9 +9,9 @@ const Header: FC<{ theme: string; onSearch: (term: string) => void; onToggle: (i
       <div className="flex items-center justify-between p-8">
         <div className="flex items-center">
           <img 
-            src="./src/assets/logo_white.svg" // Replace with your logo path
+            src={logo}
             alt="Logo"
-            className="h-10 mr-2" // Adjust height and margin as needed
+            className="h-10 mr-2"
           />
           <ToggleSwitch isDark={theme === 'dark'} onToggle={onToggle} />
         </div>
