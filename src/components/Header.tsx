@@ -1,11 +1,11 @@
-import { FC } from 'react';
+import React from 'react';
 import Searchbar from './SeachBar';
 import ToggleSwitch from './ThemeToggle';
 import logo from '../assets/logo_white.svg';
 
-const Header: FC<{ theme: string; onSearch: (term: string) => void; onToggle: (isDark: boolean) => void }> = ({ theme, onSearch, onToggle }) => {
+const Header: React.FC<{ theme: string; onSearch: (term: string) => void; onToggle: (isDark: boolean) => void }> = ({ theme, onSearch, onToggle }) => {
   return (
-    <header className="bg-gradient-to-r from-blue-600 to-teal-500 p-4 rounded-b-lg shadow-lg w-full fixed top-0 left-0 z-10">
+    <header className={`p-4 rounded-b-lg shadow-lg w-full fixed top-0 left-0 z-10 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gradient-to-r from-blue-600 to-teal-500'}`}>
       <div className="flex items-center justify-between p-8">
         <div className="flex items-center">
           <img 

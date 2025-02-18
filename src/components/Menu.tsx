@@ -1,40 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const MenuBar: React.FC = () => {
-  const [activeIcon, setActiveIcon] = useState<string | null>(null);
+const MenuBar: React.FC<{ theme: string; onIconClick: (icon: string) => void }> = ({ theme, onIconClick }) => {
 
-  const handleMouseEnter = (icon: string) => {
-    setActiveIcon(icon);
-  };
-
-  const handleMouseLeave = () => {
-    setActiveIcon(null);
-  };
-
+  
   return (
-    <div className="flex justify-around items-center container rounded-full h-14 p-2">
-      <i
-        className={`fa fa-cog text-white ${activeIcon === 'settings' ? 'airplane-icon' : ''}`}
-        onMouseEnter={() => handleMouseEnter('settings')}
-        onMouseLeave={handleMouseLeave}
+    <div className={`flex justify-around items-center p-4 rounded-lg  ${theme === 'dark' ? 'bg-gray-800' : 'bg-gradient-to-r from-blue-600 to-teal-500'}`}>
+      <i 
+        className={`fa fa-cog ${theme === 'dark' ? 'text-gray-300' : 'text-gray-300'}`} 
+        onClick={() => onIconClick('settings')} 
         aria-hidden="true"
+        style={{ cursor: 'pointer' }}
       ></i> {/* Settings icon */}
-      <i
-        className={`fa fa-home text-white ${activeIcon === 'home' ? 'airplane-icon' : ''}`}
-        onMouseEnter={() => handleMouseEnter('home')}
-        onMouseLeave={handleMouseLeave}
+      <i 
+        className={`fa fa-home ${theme === 'dark' ? 'text-gray-300' : 'text-gray-300'}`} 
+        onClick={() => onIconClick('home')} 
         aria-hidden="true"
+        style={{ cursor: 'pointer' }}
       ></i> {/* Home icon */}
-      <i
-        className={`fa fa-bell text-white ${activeIcon === 'notification' ? 'airplane-icon' : ''}`}
-        onMouseEnter={() => handleMouseEnter('notification')}
-        onMouseLeave={handleMouseLeave}
+      <i 
+        className={`fa fa-bell ${theme === 'dark' ? 'text-gray-300' : 'text-gray-300'}`} 
+        onClick={() => onIconClick('notification')} 
         aria-hidden="true"
+        style={{ cursor: 'pointer' }}
       ></i> {/* Notification icon */}
     </div>
   );
 };
 
 export default MenuBar;
-
-

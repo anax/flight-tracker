@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Roboto', sans-serif; /* Set Roboto as the default font */
-  @apply bg-gradient-to-br from-blue-900 to-teal-800; /* Tailwind CSS gradient */
+ 
 }
 
 #root {

@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import  { useState, useEffect } from 'react';
 import Header from './components/Header'; // Import the Header
 import F_Card from './components/F_Card'
 import './App.css'
+import SheetPane from './components/Sheet';
 
 import flightsData from './data/flightsData'; // Import the dummy data
-import SheetPane from './components/Sheet';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -12,14 +12,25 @@ function App() {
 
   const toggleTheme = (isDark: boolean) => {
     setIsDark(isDark);
-    document.body.classList.toggle('bg-gray-800', isDark); // Dark background
-    document.body.classList.toggle('bg-white', !isDark); // Light background
   };
+
+  // Effect to apply body class based on theme
+  useEffect(() => {
+    if (isDark) {
+      document.body.classList.add('bg-gray-700', 'text-white'); // Dark background and text
+      document.body.classList.remove('bg-white', 'text-black'); // Remove light classes
+    } else {
+      document.body.classList.add('bg-blue-900', 'text-black'); // Light background and text
+      document.body.classList.remove('bg-gray-800', 'text-white'); // Remove dark classes
+    }
+  }, [isDark]);
 
   // Filter flights based on the search term
   const filteredFlights = flightsData.filter(flight =>
     flight.flightNumber.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+ 
 
   return (
     <div className={`relative min-h-screen pt-70 ${isDark ? '' : ''}`}>
@@ -37,10 +48,11 @@ function App() {
             belt={flight.belt}
             timeLeft={flight.timeLeft}
             status={flight.status}
+            isDark={isDark}
           />
         ))}
       </div>
-      <SheetPane />
+      <SheetPane theme={isDark ? 'dark' : 'light'} />
     </div>
   )
 }
