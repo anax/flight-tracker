@@ -16,6 +16,7 @@ const ThemeToggle: React.FC<ToggleSwitchProps> = ({ isDark, onToggle }) => {
       </div>
       <span className={`ml-2 text-lg font-bold ${isDark ? 'text-white mr-180' : 'progress-bar mr-7'}`}></span>
     </div>
+    
   );
 };
 

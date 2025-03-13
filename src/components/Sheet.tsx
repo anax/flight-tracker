@@ -5,7 +5,7 @@ const SheetPane: React.FC<{ theme: string; onIconClick: (icon: string) => void }
 
  
   return (
-    <div className={`fixed bottom-0 left-0 right-0 p-4 rounded-t-lg z-10 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gradient-to-br from-blue-800 to-teal-500'}`}>
+    <div className={`fixed bottom-0 left-0 right-0 p-4 rounded-t-lg z-10 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'}`}>
       <div className="p-4 rounded-t-lg">
         {/* You can add any additional content or styling here */}
         <MenuBar theme={theme} onIconClick={onIconClick} />

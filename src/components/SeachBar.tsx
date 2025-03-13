@@ -18,22 +18,29 @@ const Searchbar: React.FC<SearchbarProps> = ({ theme, onSearch }) => {
   };
 
   return (
-    <div className="flex items-center p-8">
-      <input
-        type="text"
-        placeholder="Enter your flight number"
-        value={flightNumber}
-        onChange={handleInputChange}
-        className={`flex-1 p-2 rounded-lg border ${
-          theme === "dark"
-            ? "bg-gray-700 border-blue-100 text-white"
-            : "bg-white border-blue-100 text-black"
-        } focus:outline-none focus:ring-2`}
-      />
-      <button onClick={handleSearch} className="ml-4 progress-bar">
-        <i className="fas fa-search text-xl text-white-600"></i>
-      </button>
+    
+    <div className="flex flex-row justify-center p-2 container-search mx-0 rounded-full cursor-pointer mr-8 sm:mr-20 ml-8 sm:ml-20 min-w-75">
+        <div className="flex w-full text-gray-400 ">
+          <button className="ml-2 p-2">
+            <i className="fa-regular fa-pen-to-square"></i>
+          </button>
+          <input
+            type="text"
+            placeholder="Enter your flight number"
+            value={flightNumber}
+            onChange={handleInputChange}
+            className={`flex-1 p-2 rounded-full  ${
+              theme === "dark"
+                ? "bg-gray-00  text-white"
+                : "bg-white  text-blue-900"
+            } focus:outline-none `}
+          />
+          <button onClick={handleSearch} className="ml-4 p-2 cursor-pointer">
+            <i className="fas fa-search"></i>
+          </button>
+        </div>
     </div>
+  
   );
 };
 

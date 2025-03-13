@@ -38,10 +38,10 @@ const F_Card: React.FC<FlightCardProps> = ({
 
 
   return (
-    <div className={`rounded-xl p-6 w-full max-w-md ${isDark ? 'bg-gray-800' : 'container'} text-white`}>
+    <div className={`rounded-xl p-6 w-full min-w-95 md:min-w-aut max-w-md ${isDark ? 'bg-gray-800' : ' bg-cyan-50/50 shadow-2xs'} text-gray-700`}>
       <div className="flex justify-between items-center mb-4">
         <div className="text-lg font-bold">{flightNumber}</div>
-        <img src="/src/assets/maldivian.svg" alt="Maldivian Airlines" className="h-6" />
+        <div className='flex bg-cyan-50 p-4 rounded-2xl'><img src="/src/assets/maldivian.svg" alt="Maldivian Airlines" className="h-6" /></div>
       </div>
 
       <div className="flex justify-between items-center mb-6">
@@ -61,7 +61,7 @@ const F_Card: React.FC<FlightCardProps> = ({
         <div className="flex flex-col items-center mx-4">
           <div className="w-24 h-0.5 relative bg-gray-400">
             <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}>
-              <span className="text-xl airplane-icon">✈</span>
+              <span className="text-xl font-bold airplane-icon cursor-pointer hover:animate-bounce">✈</span>
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@ const F_Card: React.FC<FlightCardProps> = ({
         ></div>
       </div>
 
-      <div className="flex justify-between items-center pt-4 border-t border-gray-700">
+      <div className="flex justify-between items-center pt-4 border-t border-gray-300">
         <div className="text-sm">
           Belt {belt}
         </div>

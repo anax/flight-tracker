@@ -4,7 +4,8 @@ import F_Card from './components/F_Card'
 import './App.css'
 import SheetPane from './components/Sheet';
 import flightsData from './data/flightsData';
-
+import Hero from './components/Hero';
+import Searchbar from './components/SeachBar';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -46,12 +47,18 @@ function App() {
     flight.flightNumber.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Update body background color based on theme
+  useEffect(() => {
+    document.body.style.backgroundColor = isDark ? '#1a202c' : '#f1efef';
+  }, [isDark]);
+
  
 
   return (
-    <div className={`relative min-h-screen pt-70 ${isDark ? '' : ''}`}>
+    <div className={`justify-center  min-h-screen py-20 ${isDark ? '' : ''}`}>
       <Header theme={isDark ? 'dark' : 'light'} onSearch={setSearchTerm} onToggle={toggleTheme} /> {/* Pass onToggle here */}
-      <div className="p-4 space-y-3">
+      <Searchbar onSearch={setSearchTerm} theme={isDark ? 'dark' : 'light'} />
+      <div className="flex flex-col md:grid md:grid-cols-2 gap-2 justify-center items-center p-4 space-y-3">
         {filteredFlights.map((flight, index) => (
           <F_Card 
             key={index} // Use index as key (or a unique identifier if available)
@@ -68,6 +75,8 @@ function App() {
           />
         ))}
       </div>
+      {/* For TSX uncomment the commented types below */}
+      
       <SheetPane theme={isDark ? 'dark' : 'light'} onIconClick={handleIconClick}/>
     </div>
   )

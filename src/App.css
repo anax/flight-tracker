@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 body {
   font-family: 'Roboto', sans-serif; /* Set Roboto as the default font */
@@ -50,7 +51,7 @@ body {
 /* Beach Travel Theme Colors */
 :root {
   /* Light theme variables */
-  --sand-light: #f5e6d3;
+  --sand-light: #f1efef;
   --sand-dark: #dbc1a4;
   --ocean-light: #87ceeb;
   --ocean-medium: #2596be;
@@ -63,6 +64,18 @@ body {
   --sunset-dark: #ff6b6b;
   --text-light: #2c3e50;
   --bg-light: #ffffff;
+
+  --color-blue-50: oklch(0.97 0.014 254.604);
+  --color-blue-100: oklch(0.932 0.032 255.585);
+  --color-blue-200: oklch(0.882 0.059 254.128);
+  --color-blue-300: oklch(0.809 0.105 251.813);
+  --color-blue-400: oklch(0.707 0.165 254.624);
+  --color-blue-500: oklch(0.623 0.214 259.815);
+  --color-blue-600: oklch(0.546 0.245 262.881);
+  --color-blue-700: oklch(0.488 0.243 264.376);
+  --color-blue-800: oklch(0.424 0.199 265.638);
+  --color-blue-900: oklch(0.379 0.146 265.522);
+  --color-blue-950: oklch(0.282 0.091 267.935);
 }
 
 [data-theme='dark'] {
@@ -125,12 +138,12 @@ body {
 /* Progress Bars */
 .progress-container {
   @apply w-full h-2 rounded-full;
-  background-color: var(--sand-dark);
+  background-color: var(--color-blue-100);
 }
 
 .progress-bar {
   @apply h-full rounded-full transition-all duration-300;
-  background-color: var(--coral-light);
+  background-color: var(--color-blue-500);
 }
 
 /* Custom Borders */
@@ -157,8 +170,8 @@ body {
 /* Airplane Icon */
 .airplane-icon {
   @apply text-xl;
-  color: var(--coral-light);
-  animation: fly 2s ease-in-out infinite;
+  color: var(--ocean-dark);
+  animation: ping 2s ease-in-out infinite;
 }
 
 .container {
@@ -169,6 +182,14 @@ body {
 .container-no-padding {
   background: linear-gradient(135deg, #06a7b3, #003fc7);
   border-radius: 8px; /* Optional: Add some rounding */
+}
+
+.container-no-g {
+  border-radius: 8px; /* Optional: Add some rounding */
+}
+.container-search {
+
+  background-color: rgb(255, 255, 255)/* Optional: Add some rounding */
 }
 
 .toggle-btn {
