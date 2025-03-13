@@ -10,6 +10,7 @@ import Searchbar from './components/SeachBar';
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isDark, setIsDark] = useState(false);
+  
 
   const toggleTheme = (isDark: boolean) => {
     setIsDark(isDark);
