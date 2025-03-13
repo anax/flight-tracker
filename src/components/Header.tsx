@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
-import Searchbar from './SeachBar';
-import ToggleSwitch from './ThemeToggle';
 import logo from '../assets/logo_white.svg';
 
-const Header: React.FC<{ theme: string; onSearch: (term: string) => void; onToggle: (isDark: boolean) => void }> = ({ theme, onSearch, onToggle }) => {
-  
+interface HeaderProps {
+  theme: string;
+  onSearch: (term: string) => void;
+  onToggle: (isDark: boolean) => void;
+}
+
+const Header: React.FC<HeaderProps> = () => {
+
 const [isMenuOpen, setIsMenuOpen] = useState(false)
 const [activeLink, setActiveLink] = useState('#home')
 

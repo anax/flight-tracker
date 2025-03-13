@@ -4,7 +4,6 @@ import F_Card from './components/F_Card'
 import './App.css'
 import SheetPane from './components/Sheet';
 import flightsData from './data/flightsData';
-import Hero from './components/Hero';
 import Searchbar from './components/SeachBar';
 
 function App() {
